@@ -1,0 +1,21 @@
+INSERT INTO fabricante (id, nombre) VALUES (1, 'Dell');
+INSERT INTO fabricante (id, nombre) VALUES (2, 'HP');
+INSERT INTO fabricante (id, nombre) VALUES (3, 'Lenovo');
+INSERT INTO fabricante (id, nombre) VALUES (4, 'Apple');
+INSERT INTO fabricante (id, nombre) VALUES (5, 'Acer');
+INSERT INTO fabricante (id, nombre) VALUES (6, 'Asus');
+INSERT INTO fabricante (id, nombre) VALUES (7, 'Microsoft');
+INSERT INTO fabricante (id, nombre) VALUES (8, 'Samsung');
+INSERT INTO fabricante (id, nombre) VALUES (9, 'Razer');
+INSERT INTO fabricante (id, nombre) VALUES (10, 'MSI');
+
+INSERT INTO producto (id, nombre, fabricante_id, precio) VALUES (1, 'Procesador Intel Core i7', 1, 350.00);
+INSERT INTO producto (id, nombre, fabricante_id, precio) VALUES (2, 'Memoria RAM 16GB DDR4', 2, 80.00);
+INSERT INTO producto (id, nombre, fabricante_id, precio) VALUES (3, 'Disco Duro SSD 1TB', 3, 120.00);
+INSERT INTO producto (id, nombre, fabricante_id, precio) VALUES (4, 'Tarjeta Gráfica NVIDIA RTX 3080', 4, 700.00);
+INSERT INTO producto (id, nombre, fabricante_id, precio) VALUES (5, 'Placa Base ATX', 5, 150.00);
+INSERT INTO producto (id, nombre, fabricante_id, precio) VALUES (6, 'Fuente de Alimentación 750W', 6, 100.00);
+INSERT INTO producto (id, nombre, fabricante_id, precio) VALUES (7, 'Caja de Computadora RGB', 7, 90.00);
+INSERT INTO producto (id, nombre, fabricante_id, precio) VALUES (8, 'Monitor 27" 1440p', 8, 250.00);
+INSERT INTO producto (id, nombre, fabricante_id, precio) VALUES (9, 'Teclado Mecánico Retroiluminado', 9, 120.00);
+INSERT INTO producto (id, nombre, fabricante_id, precio) VALUES (10, 'Ratón para Juegos', 10, 60.00);

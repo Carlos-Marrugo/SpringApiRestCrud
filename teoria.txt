@@ -1,0 +1,5 @@
+-> En este proyecto usamos un Patron llamado "Data Access Object"
+    * Para acceder a nuestra capa de persistencia 
+
+.src/java/com/aplication/rest/persistence/IMakerDAO.java
+-> Here we are gonna defined our app funcionality
