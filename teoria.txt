@@ -3,3 +3,6 @@
 
 .src/java/com/aplication/rest/persistence/IMakerDAO.java
 -> Here we are gonna defined our app funcionality
+
+
+-> The persistence layer connect the database with our application
