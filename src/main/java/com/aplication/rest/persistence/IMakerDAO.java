@@ -1,6 +1,7 @@
 package com.aplication.rest.persistence;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.aplication.rest.entities.Maker;
 
@@ -8,7 +9,7 @@ public interface IMakerDAO {
 
     List<Maker> findAll();
 
-    Maker findByid(Long id);
+    Optional<Maker> findByid(Long id);
 
     void save(Maker maker); //saving maker
 
