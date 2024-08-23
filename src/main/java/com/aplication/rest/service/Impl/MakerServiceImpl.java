@@ -12,7 +12,7 @@ import com.aplication.rest.service.IMakerService;
 
 @Service
 public class MakerServiceImpl implements IMakerService {
-
+    //Service layer
     @Autowired
     private IMakerDAO makerDAO;
 
