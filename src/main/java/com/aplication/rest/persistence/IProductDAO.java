@@ -8,9 +8,9 @@ import com.aplication.rest.entities.Product;
 
 public interface IProductDAO {
 
-    List<Product> findById();
+    List<Product> findAll();
 
-    Optional<Product> findById(Long id);
+    Optional<Product> findAll(Long id);
 
     //Query methods
     List<Product> findByPriceInRange(BigDecimal minPrice, BigDecimal maxPrice);
