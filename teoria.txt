@@ -6,3 +6,40 @@
 
 
 -> The persistence layer connect the database with our application
+
+//  This code have kind pf bad practices
+    (no se puede retornar un objeto entety)
+    cause here you
+    shuld you a design pattern called (DTO) objeto de tranferencia de datos
+    package com.aplication.rest.controllers;
+
+    import java.util.Optional;
+
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.http.ResponseEntity;
+    import org.springframework.web.bind.annotation.GetMapping;
+    import org.springframework.web.bind.annotation.PathVariable;
+    import org.springframework.web.bind.annotation.RequestMapping;
+    import org.springframework.web.bind.annotation.RestController;
+
+    import com.aplication.rest.entities.Maker;
+    import com.aplication.rest.service.IMakerService;
+
+    @RestController
+    @RequestMapping("api/maker")
+
+    public class MakerController {
+
+        @Autowired
+        private IMakerService makerService;
+
+        @GetMapping("/find/{id}")
+        public ResponseEntity<?> findById(@PathVariable Long id) {
+            Optional<Maker> makerOptional = makerService.findByid(id);
+
+            if (makerOptional.isPresent()) {
+                
+            }
+        }
+    }
+
