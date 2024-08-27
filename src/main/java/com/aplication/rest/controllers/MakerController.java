@@ -14,7 +14,7 @@ import com.aplication.rest.entities.Maker;
 import com.aplication.rest.service.IMakerService;
 
 @RestController
-@RequestMapping("api/maker")
+@RequestMapping("/api/maker")
 
 public class MakerController {
 
