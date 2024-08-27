@@ -16,6 +16,6 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     //@Query("SELECT p FRROM Product p WHERE p.price >= ?1 AND p.price <= ?2")
     //Between operator
     @Query("SELECT p FRROM Product p WHERE p.precio ?1 BETWEEN ?2")
-    List<Product> findProductsByPriceInRange(BigDecimal maxPrecio, BigDecimal minPrecio);
+    List<Product> findProductsByPriceInRange(BigDecimal maxPrecio, BigDecimal minP); 
 
 }

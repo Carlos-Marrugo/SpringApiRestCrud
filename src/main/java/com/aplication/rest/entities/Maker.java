@@ -40,5 +40,6 @@ public class Maker {
     @OneToMany(mappedBy = "maker", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
 
     @JsonIgnore
+    @Builder.Default
     private List<Product> productList = new ArrayList<>();
 }

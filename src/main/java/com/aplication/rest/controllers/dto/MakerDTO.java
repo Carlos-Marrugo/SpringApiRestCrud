@@ -22,5 +22,6 @@ public class MakerDTO {
 
     // To avoid infinite recursion in JSON serialization, we use @JsonIgnore annotation.
     @JsonIgnore
+    @Builder.Default
     private List<Product> productList = new ArrayList<>();
 }
