@@ -1,5 +1,6 @@
 package com.aplication.rest.controllers;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,14 +14,13 @@ import com.aplication.rest.controllers.dto.ProductDTO;
 import com.aplication.rest.entities.Product;
 import com.aplication.rest.service.IProductService;
 
-
-@RestController 
+@RestController
 @RequestMapping("api/product")
 public class ProductController {
 
     @Autowired
     private IProductService productService;
-    
+
     @GetMapping("/find/{id}")
 
     public ResponseEntity<?> findById(@PathVariable Long id) {
@@ -32,11 +32,26 @@ public class ProductController {
                     .id(product.getId())
                     .name(product.getName())
                     .precio(product.getPrecio())
-                    //bug here
-                    //.maker(product.getMaker())
+                    .maker(product.getMaker())
                     .build();
-        return ResponseEntity.ok(productDTO);
+            return ResponseEntity.ok(productDTO);
         }
-    return ResponseEntity.notFound().build();
-    }   
+        return ResponseEntity.notFound().build();
+    }
+
+    @GetMapping("/findAll")
+    public ResponseEntity<?> findAll() {
+        List<ProductDTO> productList = productService.findAll()
+                .stream()
+                .map(product -> ProductDTO.builder()
+                .id(product.getId())
+                .name(product.getName())
+                .price(product.getPrice())
+                .maker(product.getMaker())
+                .build()
+                )
+                .toList();
+
+        return ResponseEntity.ok(productList);
+    }
 }

@@ -14,8 +14,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder    
-public class MakerDTO { 
+@Builder
+public class MakerDTO {
 
     private Long id;
     private String name;
