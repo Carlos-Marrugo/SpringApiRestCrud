@@ -60,7 +60,7 @@ public class MakerController {
                 .toList();
         return ResponseEntity.ok(makerService);
     }
-
+    //Mapping our save products
     @PostMapping("/save")
     public ResponseEntity<?> save(@RequestBody MakerDTO makerDTO) throws URISyntaxException {
 

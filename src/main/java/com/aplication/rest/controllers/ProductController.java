@@ -7,7 +7,13 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.aplication.rest.controllers.dto.ProductDTO;
 import com.aplication.rest.entities.Product;
@@ -40,7 +46,7 @@ public class ProductController {
 
     @GetMapping("/findAll")
     public ResponseEntity<?> findAll() {
-        List<ProductDTO> productList = productService.findAll()
+        List<ProductDTO> productList = productService.findById()
                 .stream()
                 .map(product -> ProductDTO.builder()
                 .id(product.getId())
@@ -69,7 +75,6 @@ public class ProductController {
 
         productService.saveProduct(product);
 
-
         return ResponseEntity.created(new URI("/api/product/save")).build();
     }
 
@@ -77,7 +82,7 @@ public class ProductController {
 
         Optional<Product> productOptional = productService.findById(id);
 
-        if(productOptional.isPresent()) {
+        if (productOptional.isPresent()) {
             Product product = productOptional.get();
 
             product.setName(productDTO.getName());
@@ -85,14 +90,13 @@ public class ProductController {
             product.setMaker(productDTO.getMaker());
             productService.saveProduct(product);
 
-
         }
         return ResponseEntity.notFound().build();
     }
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> daleteById(@PathVariable Long id) {
-        if(id != null) {
+        if (id != null) {
             productService.deleteByid(id);
             return ResponseEntity.ok("great Mother*****");
         }
